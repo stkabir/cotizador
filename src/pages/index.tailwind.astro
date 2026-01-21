@@ -6,7 +6,7 @@ import '../styles/global.css';
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content="Astro" />
+		<meta name="generator" content={Astro.generator} />
 		<title>Simulador de crédito | Creditaria</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,17 +48,14 @@ import '../styles/global.css';
 					</section>
 
 					<div class="flex w-full max-w-md justify-center" aria-label="Simulador de crédito">
-						<div class="cotizador flex w-full max-w-md flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/75 p-6 shadow-[0_32px_90px_rgba(9,17,37,0.55)] backdrop-blur-md min-h-162 max-h-162 sm:min-h-177 sm:max-h-177 sm:p-8" data-view="select">
-							<section class="cotizador__stage flex flex-1 flex-col gap-6 overflow-y-auto pr-1 sm:pr-2" data-stage="select" aria-label="Selecciona el tipo de crédito">
+						<div class="cotizador w-full max-w-md rounded-3xl border border-white/10 bg-slate-900/75 p-6 shadow-[0_32px_90px_rgba(9,17,37,0.55)] backdrop-blur-md sm:p-8" data-view="select">
+							<section class="cotizador__stage flex flex-col gap-6" data-stage="select" aria-label="Selecciona el tipo de crédito">
 								<div class="cotizador__heading flex flex-col items-center gap-3 text-center">
 									<div class="flex h-14 w-14 items-center justify-center rounded-full bg-cyan-900/60">
-										<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="text-white/90">
-											<path d="M4.5 11L12 4l7.5 7" />
-											<path d="M6.5 10.5v9" />
-											<path d="M17.5 10.5v9" />
-											<path d="M6.5 19.5h11" />
-											<path d="M10.5 19.5V14" />
-											<path d="M13.5 19.5V14" />
+										<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="text-white/90">
+											<path d="M3 11l9-7 9 7" />
+											<path d="M9 22V12h6v10" />
+											<path d="M2 19h20" />
 										</svg>
 									</div>
 									<h2 class="text-xl font-semibold sm:text-2xl">¿Para qué necesitas el dinero?</h2>
@@ -67,13 +64,10 @@ import '../styles/global.css';
 								<div class="cotizador__options flex flex-col gap-4" role="list">
 									<button class="cotizador__option group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left transition hover:-translate-y-1 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" type="button" role="listitem" data-category="home" aria-describedby="cotizador-home-help">
 										<span class="cotizador__option-icon flex h-14 w-14 items-center justify-center rounded-full bg-cyan-900/60 text-white/90" aria-hidden="true">
-											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-												<path d="M4.5 11L12 4l7.5 7" />
-												<path d="M6.5 10.5v8" />
-												<path d="M17.5 10.5v8" />
-												<path d="M6.5 18.5h11" />
-												<path d="M10.5 18.5V14" />
-												<path d="M13.5 18.5V14" />
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M3 11l9-7 9 7" />
+												<path d="M9 22V12h6v10" />
+												<path d="M2 19h20" />
 											</svg>
 										</span>
 										<span class="cotizador__option-body flex flex-col gap-1">
@@ -84,11 +78,11 @@ import '../styles/global.css';
 									</button>
 									<button class="cotizador__option group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left transition hover:-translate-y-1 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" type="button" role="listitem" data-category="business" aria-describedby="cotizador-business-help">
 										<span class="cotizador__option-icon flex h-14 w-14 items-center justify-center rounded-full bg-cyan-900/60 text-white/90" aria-hidden="true">
-											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-												<rect x="4" y="9" width="16" height="10" rx="1.75" />
-												<path d="M8.5 9V6.25A2.25 2.25 0 0 1 10.75 4h2.5A2.25 2.25 0 0 1 15.5 6.25V9" />
-												<path d="M4 13.5h16" />
-												<path d="M12 13.5v2.5" />
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M20 7h-3V5a2 2 0 00-2-2h-6a2 2 0 00-2 2v2H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" />
+												<path d="M9 12h6" />
+												<path d="M9 16h6" />
+												<path d="M9 5h6" />
 											</svg>
 										</span>
 										<span class="cotizador__option-body flex flex-col gap-1">
@@ -99,11 +93,9 @@ import '../styles/global.css';
 									</button>
 									<button class="cotizador__option group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left transition hover:-translate-y-1 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" type="button" role="listitem" data-category="travel" aria-describedby="cotizador-travel-help">
 										<span class="cotizador__option-icon flex h-14 w-14 items-center justify-center rounded-full bg-cyan-900/60 text-white/90" aria-hidden="true">
-											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-												<path d="M3.5 15.5l17-4.5-17-4.5 6 4.5-6 4.5" />
-												<path d="M14 17v-6" />
-												<path d="M10.5 8.25L13.5 12" />
-												<path d="M10.5 15.75L13.5 12" />
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M2 16l20-5-20-5 5 5-5 5" />
+												<path d="M17 16V9" />
 											</svg>
 										</span>
 										<span class="cotizador__option-body flex flex-col gap-1">
@@ -115,7 +107,7 @@ import '../styles/global.css';
 								</div>
 							</section>
 
-							<section class="cotizador__stage cotizador__stage--calculator flex flex-1 flex-col gap-6 overflow-y-auto pr-1 sm:pr-2" data-stage="calculator" aria-live="polite" hidden>
+							<section class="cotizador__stage cotizador__stage--calculator flex flex-col gap-6" data-stage="calculator" aria-live="polite" hidden>
 								<div class="cotizador__topbar flex items-center justify-between">
 									<button class="cotizador__back inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10" type="button">
 										<span aria-hidden="true">←</span>
@@ -216,9 +208,9 @@ import '../styles/global.css';
 			};
 
 			const iconTemplates = {
-				home: '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 11L12 4l7.5 7" /><path d="M6.5 10.5v8" /><path d="M17.5 10.5v8" /><path d="M6.5 18.5h11" /><path d="M10.5 18.5V14" /><path d="M13.5 18.5V14" /></svg>',
-				briefcase: '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="10" rx="1.75" /><path d="M8.5 9V6.25A2.25 2.25 0 0 1 10.75 4h2.5A2.25 2.25 0 0 1 15.5 6.25V9" /><path d="M4 13.5h16" /><path d="M12 13.5v2.5" /></svg>',
-				plane: '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 15.5l17-4.5-17-4.5 6 4.5-6 4.5" /><path d="M14 17v-6" /><path d="M10.5 8.25L13.5 12" /><path d="M10.5 15.75L13.5 12" /></svg>'
+				home: '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7" /><path d="M9 22V12h6v10" /><path d="M2 19h20" /></svg>',
+				briefcase: '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V9a2 2 0 012-2z" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" /><path d="M12 12h.01" /><path d="M12 16h.01" /></svg>',
+				plane: '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16l20-5-20-5 5 5-5 5" /><path d="M17 16V9" /></svg>'
 			};
 
 			const formatCurrency = (value) =>
